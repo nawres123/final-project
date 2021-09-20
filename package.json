@@ -1,0 +1,33 @@
+{
+  "name": "e-commerce",
+  "version": "1.0.0",
+  "description": "final project",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node back-end/server",
+    "server": "nodemon back-end/server --ignore './client/'",
+    "client": "npm start --prefix front-end",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "data:import": "node back-end/seeder",
+    "data:destroy": "node back-end/seeder -d"
+  },
+  "author": "Nawres et Zahra",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "bcryptjs": "^2.4.3",
+    "config": "^3.3.3",
+    "det": "0.0.4",
+    "dotenv": "^8.2.0",
+    "env": "0.0.2",
+    "express": "^4.17.1",
+    "express-async-handler": "^1.1.4",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.11.15"
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "nodemon": "^2.0.7"
+  }
+}
