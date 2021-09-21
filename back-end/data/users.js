@@ -3,18 +3,18 @@ const users = [
   {
     name: 'Admin User',
     email: 'admin@gmail.com',
-    password: bcrypt.hashSync('123456', 10),
+    password: "$2a$10$SINNWyXooNVeXwTnMSoDRupIYgey3zRb4kdiyqyBLz9ZAbLx5v3aW",
     isAdmin: true,
   },
   {
     name: 'nawres mabrouk',
     email: 'nawressmabrouk123@gmail.com',
-    password: bcrypt.hashSync('123456', 10),
+    password: "$2a$10$SINNWyXooNVeXwTnMSoDRupIYgey3zRb4kdiyqyBLz9ZAbLx5v3aW",
   },
   {
     name: 'Zahra gratti',
     email: 'zahra@gmail.com',
-    password: bcrypt.hashSync('123456', 10),
+    password: "$2a$10$SINNWyXooNVeXwTnMSoDRupIYgey3zRb4kdiyqyBLz9ZAbLx5v3aW",
   },
 ];
 
