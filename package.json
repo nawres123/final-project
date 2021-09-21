@@ -11,6 +11,7 @@
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "data:import": "node back-end/seeder",
     "data:destroy": "node back-end/seeder -d"
+   
   },
   "author": "Nawres et Zahra",
   "license": "ISC",
