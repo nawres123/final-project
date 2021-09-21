@@ -1,8 +1,11 @@
 import mongoose from 'mongoose';
 
+//cluster uri
+const CLUSTER_URI = "mongodb+srv://Nawres:1234@cluster0.fhdtv.mongodb.net/greenlife?retryWrites=true&w=majority"
+
 const connectDB = async () => {
   try {
-    const conn = await mongoose.connect("mongodb://localhost:27017/db", {
+    const conn = await mongoose.connect(CLUSTER_URI, {
       useUnifiedTopology: true,
       useNewUrlParser: true,
       useCreateIndex: true,

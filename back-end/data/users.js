@@ -1,4 +1,5 @@
 import bcrypt from 'bcryptjs';
+//all passwords 123456
 const users = [
   {
     name: 'Admin User',
