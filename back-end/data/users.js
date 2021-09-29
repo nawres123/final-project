@@ -2,7 +2,7 @@ import bcrypt from 'bcryptjs';
 const users = [
   {
     name: 'Admin User',
-    email: 'admin@gmail.com',
+    email: 'admin@example.com',
     password: "$2a$10$SINNWyXooNVeXwTnMSoDRupIYgey3zRb4kdiyqyBLz9ZAbLx5v3aW",
     isAdmin: true,
   },

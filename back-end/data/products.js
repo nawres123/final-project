@@ -18,6 +18,7 @@ const products = [{
         name: 'Ceinture lombaire (homme)',
         image: '/images/ceinture.jpg',
         description: 'MAINTIEN ARTICULAIRE',
+	category: 'Centure',
         Price: ' 27.5',
         countInStock: 0,
     },
@@ -42,6 +43,7 @@ const products = [{
         image: '/images/lait1.jpg',
         description: 'Ce lait corps hydratant à la texture légère et fondante glisse sur la peau pour aussitôt lui apporter confort, souplesse et douceur. Un subtil parfum de néroli enveloppe le corps de ses notes florales et hespéridées. Gorgée de douceur, la peau est lisse et retrouve un toucher velouté',
         INGRÉDIENTS: ' https://www.clarins.fr/on/demandware.static/-/Library-Sites-clarins-v3/default/dwe8e3614c/ingredients/aloe_vera.jpg',
+	category: 'Lait',
         price: '26.5',
         countInStock: '6',
     },
@@ -68,7 +70,10 @@ const products = [{
     {
         name: 'masque-tissu',
         image: '/images/masque-tissu.jpg',
-        description: 'Un soin hydratant et vitaminé pour estomper les signes de fatigue  '
+        description: 'Un soin hydratant et vitaminé pour estomper les signes de fatigue',
+	category: 'Masque',
+	price: 2.50,
+	countInStock: 12
 
     },
 
@@ -93,6 +98,7 @@ const products = [{
         image: '/images/masqueffp2.jpg',
         description:'Masque type KN95 équivalent FFP2 pour une protection optimale contre les virus',
         PRIX:'Lot de 20 masques à usage unique vendus par 2 boites minimum ',
+	category: 'Masque',
         price: '12',
         countInStock: 50,
     },

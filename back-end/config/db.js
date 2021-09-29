@@ -1,8 +1,12 @@
+import dotenv from "dotenv";
 import mongoose from 'mongoose';
+
+dotenv.config();
+const DB_URI = 'mongodb+srv://Nawres:1234@cluster0.fhdtv.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
 
 const connectDB = async () => {
   try {
-    const conn = await mongoose.connect("mongodb://localhost:27017/db", {
+    const conn = await mongoose.connect(DB_URI, {
       useUnifiedTopology: true,
       useNewUrlParser: true,
       useCreateIndex: true,

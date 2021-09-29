@@ -27,7 +27,6 @@ export const createOrder = (order) => async (dispatch, getState) => {
         Authorization: `Bearer ${userInfo.token}`,
       },
     };
-
     const { data } = await axios.post(`/orders`, order, config);
 
     dispatch({
@@ -35,6 +34,7 @@ export const createOrder = (order) => async (dispatch, getState) => {
       payload: data,
     });
   } catch (error) {
+    console.log("inside error");
     dispatch({
       type: ORDER_CREATE_FAIL,
       payload:
