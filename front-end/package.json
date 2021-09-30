@@ -1,6 +1,6 @@
 {
-  "name": "front-end",
   "proxy": "http://127.0.0.1:4000",
+  "name": "front-end",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -31,18 +31,6 @@
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
     ]
   }
 }

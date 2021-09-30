@@ -1,5 +1,6 @@
 import mongoose from 'mongoose';
-import dotenv from 'dotenv';
+import dotenv from 'dotenv'; 
+import colors from "colors";
 import users from './data/users.js';
 import products from './data/products.js';
 import User from './models/userModel.js';
@@ -27,10 +28,10 @@ const importData = async () => {
 
     await Product.insertMany(sampleProducts);
 
-    console.log('Data imported!');
+    console.log('Data imported!'.green);
     process.exit();
   } catch (error) {
-    console.error(error);
+    console.error(error.red);
     process.exit(1);
   }
 };
@@ -41,10 +42,10 @@ const destroyData = async () => {
     await Product.deleteMany();
     await User.deleteMany();
 
-    console.log('Data destroyed!');
+    console.log('Data destroyed!'.red);
     process.exit();
   } catch (error) {
-    console.error(error);
+    console.error(error.red);
     process.exit(1);
   }
 };
