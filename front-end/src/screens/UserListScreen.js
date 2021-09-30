@@ -1,39 +1,40 @@
-import React, { useEffect } from 'react'
-import { LinkContainer } from 'react-router-bootstrap'
-import { Table, Button } from 'react-bootstrap'
-import { useDispatch, useSelector } from 'react-redux'
-import Message from '../components/Message'
-import Loader from '../components/Loader'
-import { listUsers, deleteUser } from '../actions/userActions'
+import React, { useEffect } from 'react';
+import { LinkContainer } from 'react-router-bootstrap';
+import { Table, Button } from 'react-bootstrap';
+import { useDispatch, useSelector } from 'react-redux';
+import Message from '../components/Message';
+import Loader from '../components/Loader';
+import { listUsers, deleteUser } from '../actions/userActions';
 
-const UserListScreen = ({history}) => {
-  const dispatch = useDispatch()
 
-  const userList = useSelector((state) => state.userList)
-  const { loading, error, users } = userList
-  console.log(loading);
-  const userLogin = useSelector((state) => state.userLogin)
-  const { userInfo} = userLogin
+const UserListScreen = ({ history }) => {
+    const dispatch = useDispatch()
 
-   const userDelete= useSelector((state) => state.userDelete)
-  const { success:successDelete} = userDelete
+    const userList = useSelector((state) => state.userList)
+    const { loading, error, users } = userList
 
-  useEffect(() => {
-    if(userInfo &&userInfo.user.isAdmin){
-      dispatch(listUsers())
-    }  else {
-      history.push('./login')
+    const userLogin = useSelector((state) => state.userLogin)
+    const { userInfo } = userLogin
+
+    const userDelete = useSelector((state) => state.userDelete)
+    const { success: successDelete } = userDelete
+
+    useEffect(() => {
+        if (userInfo && userInfo.isAdmin) {
+            dispatch(listUsers())
+        } else {
+            history.push('./login')
+        }
+    }, [dispatch, history, successDelete, userInfo])
+
+    const deleteHandler = (id) => {
+        if (window.confirm('are you sure'))
+            dispatch(deleteUser(id))
+
     }
-  }, [dispatch ,history , successDelete ,userInfo])
-  
- const  deleteHandler = (id) =>{
-   if(window.confirm ('are you sure'))
-   dispatch(deleteUser(id))
-
- }
-  return (
-    <React.Fragment>
-      <h1>Users</h1>
+    return (
+        <React.Fragment>
+      <h1 style={{paddingTop: "100px"}}>Users</h1>
       {loading ? (
         <Loader />
       ) : error ? (
@@ -83,7 +84,8 @@ const UserListScreen = ({history}) => {
         </Table>
       )}
     </React.Fragment>
-  )
+    )
+
 }
 
 export default UserListScreen

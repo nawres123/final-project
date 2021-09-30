@@ -1,10 +1,11 @@
-import { USER_DETAILS_FAIL, 
-  USER_DETAILS_REQUEST, 
-  USER_DETAILS_SUCCESS, 
-  USER_LIST_FAIL,
-   USER_LIST_REQUEST,
+import { 
+    USER_DETAILS_FAIL, 
+    USER_DETAILS_REQUEST, 
+    USER_DETAILS_SUCCESS, 
+    USER_LIST_FAIL,
+    USER_LIST_REQUEST,
     USER_LIST_SUCCESS, 
-   USER_LOGIN_FAIL,
+    USER_LOGIN_FAIL,
     USER_LOGIN_REQUEST, 
     USER_LOGIN_SUCCESS,
     USER_LOGOUT, USER_REGISTER_FAIL, 
@@ -180,6 +181,10 @@ export const updateUserProfile = (user) => async (dispatch, getState) => {
 };
 
 //related to admin
+//
+//    ADMIN
+//
+//
 
   export const listUsers = () => async (dispatch, getState) => {
     try {
@@ -193,18 +198,19 @@ export const updateUserProfile = (user) => async (dispatch, getState) => {
   
       const config = {
         headers: {
-          Authorization: `Bearer ${userInfo.token}`,
-        },
+          user: userInfo.isAdmin
+          //Authorization: `Bearer ${userInfo.token}`,
+        }
       }
   
-      const { data } = await axios.get(`/api/users/`, config)
+      const { data } = await axios.get(`/users/`, config)
   
       dispatch({
         type: USER_LIST_SUCCESS,
         payload: data,
       })
     } catch (error) {
-      dispatch({
+      const res = dispatch({
         type: USER_LIST_FAIL,
         payload:  error.response && error.response.data.message
         ? error.response.data.message
@@ -230,7 +236,7 @@ export const updateUserProfile = (user) => async (dispatch, getState) => {
         },
       }
        
-      await axios.delete(`/api/users/${id}`, config)
+      await axios.delete(`users/${id}`, config)
   
       dispatch({
         type: USER_DELETE_SUCCESS,
@@ -263,7 +269,7 @@ export const updateUserProfile = (user) => async (dispatch, getState) => {
         },
       }
        
-       const {data} = await axios.put(`/api/users/${user._id}`, user , config)
+       const {data} = await axios.put(`users/${user._id}`, user , config)
   
       dispatch({
         type: USER_UPDATE_SUCCESS
