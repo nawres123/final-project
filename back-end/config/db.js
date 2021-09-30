@@ -1,11 +1,12 @@
+import dotenv from "dotenv";
 import mongoose from 'mongoose';
 
-//cluster uri
-const CLUSTER_URI = "mongodb+srv://Nawres:1234@cluster0.fhdtv.mongodb.net/greenlife?retryWrites=true&w=majority"
+dotenv.config();
+
 
 const connectDB = async () => {
   try {
-    const conn = await mongoose.connect(CLUSTER_URI, {
+    const conn = await mongoose.connect(process.env.DB_URI, {
       useUnifiedTopology: true,
       useNewUrlParser: true,
       useCreateIndex: true,
