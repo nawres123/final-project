@@ -120,6 +120,7 @@ export const getUserDetails = (id) => async (dispatch, getState) => {
       headers: {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${userInfo.token}`,
+        user: userInfo.isAdmin
       },
     };
 
