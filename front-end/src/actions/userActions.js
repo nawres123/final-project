@@ -232,11 +232,12 @@ export const updateUserProfile = (user) => async (dispatch, getState) => {
   
       const config = {
         headers: {
-          Authorization: `Bearer ${userInfo.token}`,
-        },
+          user: userInfo.isAdmin
+          //Authorization: `Bearer ${userInfo.token}`,
+        }
       }
        
-      await axios.delete(`users/${id}`, config)
+      await axios.delete(`/users/${id}`, config)
   
       dispatch({
         type: USER_DELETE_SUCCESS,
@@ -264,12 +265,12 @@ export const updateUserProfile = (user) => async (dispatch, getState) => {
   
       const config = {
         headers: {
-          'content-type' : 'application/json' ,
-          Authorization: `Bearer ${userInfo.token}`,
-        },
+          user: userInfo.isAdmin
+          //Authorization: `Bearer ${userInfo.token}`,
+        }
       }
        
-       const {data} = await axios.put(`users/${user._id}`, user , config)
+       const {data} = await axios.put(`/users/${user._id}`, user , config)
   
       dispatch({
         type: USER_UPDATE_SUCCESS
