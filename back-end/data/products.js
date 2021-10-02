@@ -1,5 +1,4 @@
 const products = [{
-<<<<<<< HEAD
     name: 'Collier',
     image: '/images/collier.jpg',
     description: 'Pour choisir votre taille de collier cervical Pour choisir votre taille de collier cervical Pour choisir votre taille de collier cervical',
@@ -75,7 +74,6 @@ const products = [{
     category: 'Masque',
     price: "10.50",
     countInStock: 20,
-=======
         name: 'Collier',
         image: '/images/collier.jpg',
         description: 'Pour choisir votre taille de collier cervical Pour choisir votre taille de collier cervical Pour choisir votre taille de collier cervical',
@@ -151,11 +149,9 @@ const products = [{
 	category: 'Masque',
 	price: 2.50,
 	countInStock: 12
->>>>>>> e52e43e7ca8221254cbb77f1d229f946ba2ee912
+
 
 },
-
-<<<<<<< HEAD
 {
     name: 'Bactilin s (gel desinfectant)',
     image: '/images/gel.jpg',
@@ -189,7 +185,6 @@ const products = [{
     price: 16.5,
     countInStock: 60,
 },
-=======
     {
         name: 'Bactilin s (gel desinfectant)',
         image: '/images/gel.jpg',
@@ -223,6 +218,5 @@ const products = [{
         price: 16.5,
         countInStock: 60,
     },
->>>>>>> e52e43e7ca8221254cbb77f1d229f946ba2ee912
 ];
 export default products;

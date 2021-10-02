@@ -11,7 +11,7 @@ const UserListScreen = ({history}) => {
 
   const userList = useSelector((state) => state.userList)
   const { loading, error, users } = userList
-  console.log(loading);
+
   const userLogin = useSelector((state) => state.userLogin)
   const { userInfo} = userLogin
 
@@ -19,7 +19,7 @@ const UserListScreen = ({history}) => {
   const { success:successDelete} = userDelete
 
   useEffect(() => {
-    if(userInfo &&userInfo.user.isAdmin){
+    if(userInfo && userInfo.isAdmin){
       dispatch(listUsers())
     }  else {
       history.push('./login')
@@ -33,7 +33,7 @@ const UserListScreen = ({history}) => {
  }
   return (
     <React.Fragment>
-      <h1>Users</h1>
+      <h1 style={{paddingTop: "100px"}}>Users</h1>
       {loading ? (
         <Loader />
       ) : error ? (

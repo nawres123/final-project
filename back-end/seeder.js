@@ -12,7 +12,7 @@ dotenv.config();
 
 connectDB();
 
-const importData = async () => {
+export const importData = async () => {
   try {
     await Order.deleteMany();
     await Product.deleteMany();
@@ -36,7 +36,7 @@ const importData = async () => {
   }
 };
 
-const destroyData = async () => {
+export const destroyData = async () => {
   try {
     await Order.deleteMany();
     await Product.deleteMany();
