@@ -26,6 +26,10 @@ app.get('/config/paypal', (req, res) => res.send(process.env.PAYPAL_CLIENT_ID));
 
 app.use(notFound);
 
+app.get('*',(req,res) => {
+res.send('the frontend route handler')
+})
+
 app.use(errorHandler);
 
 
