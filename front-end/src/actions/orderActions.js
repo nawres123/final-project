@@ -146,7 +146,7 @@ export const listMyOrders = () => async (dispatch, getState) => {
             },
           }
       
-          const { data } = await axios.get(`/api/orders/myorders`,config)
+          const { data } = await axios.get(`/orders/myorders`,config)
       
           dispatch({
             type: ORDER_LIST_MY_SUCCESS,  
@@ -180,7 +180,7 @@ export const listMyOrders = () => async (dispatch, getState) => {
             },
           }
       
-          const { data } = await axios.get(`/api/orders`,config)
+          const { data } = await axios.get(`/orders`,config)
       
           dispatch({
             type: ORDER_LIST_SUCCESS,  
@@ -213,7 +213,7 @@ export const listMyOrders = () => async (dispatch, getState) => {
             },
           }
       
-          const { data } = await axios.put(`/api/orders/${order._id}/DELIVER`, {} , config)
+          const { data } = await axios.put(`/orders/${order._id}/DELIVER`, {} , config)
       
           dispatch({
             type: ORDER_DELIVER_SUCCESS,  

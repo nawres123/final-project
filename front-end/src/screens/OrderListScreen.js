@@ -16,8 +16,7 @@ const OrderListScreen = ({ history }) => {
   const { userInfo } = userLogin
   
     useEffect(() => {
-      console.log('userInfo')
-      if (userInfo && userInfo.user.isAdmin) {
+      if (userInfo && userInfo.isAdmin) {
         dispatch(listOrders())
       } else {
         history.push('/login')
@@ -26,7 +25,7 @@ const OrderListScreen = ({ history }) => {
 
   return (
     <React.Fragment>
-      <h1>Orders</h1>
+      <h1 style={{paddingTop: "100px"}} >Orders</h1>
 
 
       {loading ? (
