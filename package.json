@@ -5,7 +5,11 @@
   "description": "final project",
   "main": "server.js",
   "type": "module",
+  
   "scripts": {
+    "build":"cd client && npm run build ",
+    "install-client":"cd client && npm install ",
+    "heroku-postbuild":"npm run install-client &&npm run build",
     "start": "node back-end/server",
     "server": "nodemon back-end/server --ignore './client/'",
     "client": "npm start --prefix front-end",

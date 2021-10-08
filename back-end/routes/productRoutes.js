@@ -12,6 +12,8 @@ import { admin } from "../middleware/authMiddleware.js";
 
 Router.route('/').get(getProducts);
 
+Router.route('/products/').post(createProduct)
+
 Router.route('/:id').get(getProductById);
 
 Router.route("/:id")

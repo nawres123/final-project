@@ -26,9 +26,7 @@ app.get('/config/paypal', (req, res) => res.send(process.env.PAYPAL_CLIENT_ID));
 
 app.use(notFound);
 
-app.get('*',(req,res) => {
-res.send('the frontend route handler')
-})
+
 
 app.use(errorHandler);
 
@@ -36,7 +34,10 @@ app.use(errorHandler);
 
 const PORT = process.env.PORT || 4000;
 
+if (process.env.NODE_ENV ==='production'){
+  app.use(express.static('client/build'));
 
+}
 app.listen(PORT, () =>
   console.log(
     `Server is up and running in ${process.env.OS} mode on port ${PORT}`
