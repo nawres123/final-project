@@ -10,9 +10,9 @@ import {
 
 import { admin } from "../middleware/authMiddleware.js";
 
-Router.route('/').get(getProducts);
-
-Router.route('/products/').post(createProduct)
+Router.route('/')
+    .get(getProducts)
+    .post(createProduct);
 
 Router.route('/:id').get(getProductById);
 

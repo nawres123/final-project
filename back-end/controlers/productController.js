@@ -3,7 +3,6 @@ import asyncHandler from 'express-async-handler';
 
 const getProducts = asyncHandler(async (req, res) => {
     const products = await Product.find({});
-    console.log(products.length);
     res.json(products);
 });
 
@@ -36,14 +35,13 @@ const deleteProduct = asyncHandler(async (req, res) => {
 // @access  Private/Admin
 const createProduct = asyncHandler(async (req, res) => {
     const product = new Product({
-        name: 'Sample name',
-        price: 0,
-        user: req.user._id,
-        image: '/images/sample.jpg',
-        category: 'Sample category',
-        gender: 'women',
-        countInStock: 0,
-        description: 'Sample description',
+        name: req.body.product.name,
+        price: req.body.product.price,
+        user: req.body.user._id,
+        image: req.body.product.image,
+        category: req.body.product.category,
+        countInStock: req.body.product.countInStock,
+        description: req.body.product.description,
     })
 
     const createdProduct = await product.save()

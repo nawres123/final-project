@@ -91,10 +91,7 @@ export const deleteProduct = (id) => async (dispatch, getState) => {
     }
 }
 
-
-
-
-export const createProduct = () => async (dispatch, getState) => {
+export const createProduct = (product) => async (dispatch, getState) => {
     try {
         dispatch({
             type: PRODUCT_CREATE_REQUEST,
@@ -109,13 +106,11 @@ export const createProduct = () => async (dispatch, getState) => {
                 Authorization: `Bearer ${userInfo.token}`,
             },
         }
-
-        const { data } = await axios.post(`/products/`, {}, config)
+        const { data } = await axios.post(`/products/`, {user:getState().userLogin.userInfo, product: product}, config)
 
         dispatch({
             type: PRODUCT_CREATE_SUCCESS,
             payload: data
-
         })
     } catch (error) {
         dispatch({

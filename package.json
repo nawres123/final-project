@@ -1,22 +1,20 @@
 {
   "proxy": "http://127.0.0.1:4000",
-  "name": "e-commerce",
+  "name": "GreenLife",
   "version": "1.0.0",
-  "description": "final project",
+  "description": "GreenLife project final edition",
   "main": "server.js",
   "type": "module",
-  
   "scripts": {
-    "build":"cd client && npm run build ",
-    "install-client":"cd client && npm install ",
-    "heroku-postbuild":"npm run install-client &&npm run build",
+    "build": "cd client && npm run build ",
+    "install-client": "cd client && npm install ",
+    "heroku-postbuild": "npm run install-client && npm run build",
     "start": "node back-end/server",
     "server": "nodemon back-end/server --ignore './client/'",
     "client": "npm start --prefix front-end",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "data:import": "node back-end/seeder",
     "data:destroy": "node back-end/seeder -d"
-   
   },
   "author": "Nawres et Zahra",
   "license": "ISC",

@@ -51,13 +51,15 @@ const ProductListScreen = ({ history, match }) => {
         }
     }
     const createProductHandler = () => {
-        dispatch(createProduct())
+
+        history.push("/admin/createproduct");
+        //dispatch(createProduct())
     }
     return (
         <React.Fragment>
 <Row  style={{paddingTop: "100px"}} className ='align-items-center'>
-  <Col >
-  <h1>Products</h1>
+  <Col>
+    <h1>Products</h1>
   </Col>
   <Col className='text-right'>
     <Button className = 'my-3' onClick={createProductHandler} >
